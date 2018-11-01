@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.vs\\AgendaSrc",
+    "\\.vs\\AgendaSrc\\v15",
+    "\\Agenda",
+    "\\Agenda\\src",
+    "\\Agenda\\src\\app",
+    "\\Agenda\\src\\app\\modules",
+    "\\Agenda\\src\\app\\modules\\contacts",
+    "\\Agenda\\src\\app\\modules\\contacts\\contactslist"
+  ],
+  "SelectedNode": "\\Agenda\\dist",
+  "PreviewInSolutionExplorer": false
+}
