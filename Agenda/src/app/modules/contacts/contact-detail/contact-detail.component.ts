@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Contact } from '../models/contact';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { ContactslistComponent } from '../contactslist/contactslist.component';
 // import { DialogService }  from '../../dialog.service';
 
 @Component({
@@ -16,11 +17,13 @@ export class ContactDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    // public dialogService: DialogService
+    // public dialogService: DialogService,
+    private contactsList:ContactslistComponent
   ) {}
 
 
   ngOnInit() {
+    this.contactsList.showContacts=false;
     this.route.data
       .subscribe((data: { contact: Contact }) => {
         this.editName = data.contact.name;
@@ -30,9 +33,11 @@ export class ContactDetailComponent implements OnInit {
 
   cancel() {
     this.gotoContacts();
+    this.contactsList.showContacts=true;
   }
 
   save() {
+    this.contactsList.showContacts=true;
     this.contact.name = this.editName;
     this.gotoContacts();
   }

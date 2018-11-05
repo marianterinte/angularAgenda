@@ -1,10 +1,12 @@
-<ul class="contacts">
-    <li *ngFor="let contact of contacts$ | async" [class.selected]="contact.id === selectedId">
-        <a [routerLink]="[contact.id]">
-            <span class="badge">{{ contact.id }}</span>{{ contact.name }}
-        </a>
-    </li>
-</ul>
+<div [hidden]="!showContacts">
+    <ul class="contacts">
+        <li *ngFor="let contact of contacts$ | async" [class.selected]="contact.id === selectedId">
+            <a [routerLink]="[contact.id]">
+                <span class="badge">{{ contact.id }}</span>{{ contact.name }}
+            </a>
+        </li>
+    </ul>
 
+</div>
 
 <router-outlet></router-outlet>

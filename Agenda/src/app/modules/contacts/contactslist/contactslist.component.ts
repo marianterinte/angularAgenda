@@ -14,6 +14,7 @@ export class ContactslistComponent implements OnInit {
 
   contacts$: Observable<Contact[]>;
   selectedId: number;
+  public showContacts:boolean;
 
   constructor(
     private service: ContactService,
@@ -21,6 +22,7 @@ export class ContactslistComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.showContacts=true;
     this.contacts$ = this.route.paramMap.pipe(
       switchMap(params => {
         this.selectedId = +params.get('id');
